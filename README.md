@@ -6,7 +6,7 @@ Nilsonlinux.
 Demo>: https://nilsonlinux.github.io/
 
 
-[![Faça uma doação](#)](https://pag.ae/bmBkdtr)
+[![Faça uma doação]](https://pag.ae/bmBkdtr)
 
 * Project page: https://github.com/nilsonlinux/nilsonlinux.github.io
 * Repository: https://github.com/google/recaptcha

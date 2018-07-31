@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css" />
+  </head>
+  <body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+    <div class="container">
+        <div class="row">
+          <form class="col s10 offset-s1 m8 offset-m2" id="gform" method="POST" action="www.google.com">
+            <h1>Contact us</h1>
+            <small class="col s8 offset-s2">We'll get back to you within 24 hours.</small>
+            <div class="row">
+              <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+                <input id="first_name" type="text" class="validate" name="first_name" required="required">
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate" name="last_name" required="required">
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+              <i class="material-icons prefix">mail</i>
+                <input id="email" type="email" class="validate" name="email" required="required">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                    <label for="icon_prefix2">Message</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light blue lighten-2 col s4 offset-s4" type="submit" name="action" id="submit">Submit
+                  <i class="material-icons right">send</i>
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        // Form submission redirect and reset
+        $(function() {
+          $('#gform').submit(function(){
+            $.post($(this).attr('action'), $(this).serialize(), function() {
+              window.location = 'www.google.com';
+              alert("Thanks! We'll be in touch in the next 24 hours.")
+              $("#gform")[0].reset()
+            });
+            return false;
+          });
+        });
+      </script>
+
+      <style type="text/css">
+        .container {
+          margin-top: 10%;
+          background-color: #ffffff;
+        }
+        .row {
+          padding-top: 10px;
+        }
+        .submit {
+          max-height: 100%;
+          max-width: 100%;
+        }
+        h1 {
+          text-transform: uppercase;
+          text-align: center;
+          margin-bottom: 0px;
+        }
+         input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+         input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+         textarea.materialize-textarea:focus:not([readonly]) + label {
+           color: #64b5f6;
+         }
+         input[type=text]:not(.browser-default):focus:not([readonly]),
+         input[type=email]:not(.browser-default):focus:not([readonly]),
+         textarea.materialize-textarea:focus:not([readonly]) {
+           border-bottom: 1px solid #64b5f6;
+         }
+         /* icon prefix focus color */
+         .input-field .prefix.active {
+           color: #64b5f6;
+         }
+        small {
+          font-size: 1em;
+          text-align: center;
+          font-style: italic;
+         }
+      </style>
+
+  </body>
+</html>
